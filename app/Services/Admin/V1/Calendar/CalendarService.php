@@ -19,6 +19,10 @@ class CalendarService
         $this->createCalendarHandler = $createCalendarHandler;
         $this->calendarRepository = $calendarRepository;
     }
+    public function getCalendar(): array
+    {
+        return $this->calendarRepository->getCalendar();
+    }
 
     /**
      * @param array $data
@@ -28,17 +32,13 @@ class CalendarService
     {
         return $this->createCalendarHandler->handle($data);
     }
-//    public function updateEventCalendar(array $data): Calendar
-//    {
-//        return $this->createCalendarHandler->handle($data);
-//    }
     /**
-     * @param Calendar $calendar
+     * @param string $id
      * @param array $data
      * @return Calendar
      */
-    public function updateEventCalendar(Calendar $calendar, array $data): Calendar
+    public function updateEventCalendar(int $id, array $data): Calendar
     {
-        return $this->calendarRepository->updateFromArray($calendar, $data);
+        return $this->calendarRepository->updateFromArray($id, $data);
     }
 }

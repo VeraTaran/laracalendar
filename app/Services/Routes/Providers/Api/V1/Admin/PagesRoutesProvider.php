@@ -19,13 +19,15 @@ class PagesRoutesProvider
 
     public function registerRoutes()
     {
-        Route::group(['prefix' => 'v1', 'as' => 'api.',
-           // 'namespace' => 'Api\V1\Admin',
+        Route::group([
+            'prefix' => 'v1', 'as' => 'api.',
             //'middleware' => ['auth:api']
-        ], function () {
-            // Events
-            Route::apiResource('events',    EventApiController::class);
-            Route::apiResource('calendar',  CalendarApiController::class);
-        });
+            ], function ()
+            {
+                Route::apiResources([
+                    'events' =>  EventApiController::class,
+                    'calendar' =>  CalendarApiController::class
+                ]);
+            });
     }
 }

@@ -7,10 +7,7 @@ use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-
-use App\Models\Admin\V1\Pages\Event;
 use App\Http\Requests\Admin\V1\Pages\Event\StoreEvent;
-//use App\Http\Requests\Admin\V1\Pages\Event\UpdateEvent;
 use App\Http\Resources\Admin\EventResource;
 use App\Services\Admin\V1\Event\EventService;
 use Illuminate\Auth\Access\Gate;
@@ -35,15 +32,6 @@ class EventApiController extends Controller
     {
         //
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create(): Response
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      */
@@ -67,15 +55,6 @@ class EventApiController extends Controller
     {
         //
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(string $id): Response
-    {
-        //
-    }
-
     /**
      * Update the specified resource in storage.
      */

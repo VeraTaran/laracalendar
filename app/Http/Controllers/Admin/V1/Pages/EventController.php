@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\V1\Pages;
 
 use App\Http\Controllers\Controller;
+use App\Http\Resources\Admin\EventResource;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -48,14 +49,14 @@ class EventController extends Controller
     public function store(StoreEvent $request): JsonResponse
     {
         try {
-            // $data = $request->getFormData();
             $sanitized = $request->getSanitized();
-            $this->eventService->storeNewEvent($sanitized);
+            $event = $this->eventService->storeNewEvent($sanitized);
         } catch (QueryException $exception) {
             throw new InvalidArgumentException($exception->getMessage());
         }
-//        return redirect()->back();
-        return response()->json($request);
+        return (new EventResource($event))
+            ->response()
+            ->setStatusCode(\Symfony\Component\HttpFoundation\Response::HTTP_CREATED);
     }
 
     /**

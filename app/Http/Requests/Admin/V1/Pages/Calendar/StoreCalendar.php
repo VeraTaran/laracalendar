@@ -31,7 +31,6 @@ class StoreCalendar extends FormRequest
         $sanitized = $this->validated();
 
         //Add your code for manipulation with request data here
-        //$sanitized['user_id'] = 1;
 
         return $sanitized;
     }

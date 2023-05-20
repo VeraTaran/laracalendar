@@ -6,7 +6,8 @@ use App\Models\Admin\V1\Pages\Calendar;
 
 interface CalendarRepositoryInterface
 {
+    public function find(int $id): Calendar;
+    public function getCalendar():array;
     public function createFromArray(array $data): Calendar;
-
-    public function updateFromArray(Calendar $calendar, array $data);
+    public function updateFromArray(int $id, array $data);
 }
