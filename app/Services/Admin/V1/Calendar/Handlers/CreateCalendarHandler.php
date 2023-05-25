@@ -3,7 +3,7 @@
 namespace App\Services\Admin\V1\Calendar\Handlers;
 
 use App\Models\Admin\V1\Pages\Calendar;
-use App\Services\Admin\V1\Calendar\Repositories\EloquentCalendarRepository;
+use App\Services\Admin\V1\Calendar\Repositories\CalendarRepositoryInterface;
 
 class CreateCalendarHandler
 {
@@ -11,7 +11,7 @@ class CreateCalendarHandler
     private $calendarRepository;
 
     public function __construct(
-        EloquentCalendarRepository $calendarRepository
+        CalendarRepositoryInterface $calendarRepository
     )
     {
         $this->calendarRepository = $calendarRepository;

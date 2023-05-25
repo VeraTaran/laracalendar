@@ -3,7 +3,7 @@
 namespace App\Services\Admin\V1\Event\Handlers;
 
 use App\Models\Admin\V1\Pages\Event;
-use App\Services\Admin\V1\Event\Repositories\EloquentEventRepository;
+use App\Services\Admin\V1\Event\Repositories\EventRepositoryInterface;
 
 class CreateEventHandler
 {
@@ -11,7 +11,7 @@ class CreateEventHandler
     private $eventRepository;
 
     public function __construct(
-        EloquentEventRepository $eventRepository
+        EventRepositoryInterface $eventRepository
     )
     {
         $this->eventRepository = $eventRepository;

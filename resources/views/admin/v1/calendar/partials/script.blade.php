@@ -213,9 +213,9 @@
 
                 let add_event_id = add_event(event.text(val), currColor);
                 let event_id;
-                console.log(add_event_id);
-                add_event_id.then(function (val) {
-                    event_id = val;
+                //console.log(add_event_id);
+                add_event_id.then(function (responseValueID) {
+                    event_id = responseValueID;
                     event.attr('id', 'event-' + event_id);
                     event.attr('data-event-id', event_id);
                     // console.log('add_event_id = ' + event_id);
