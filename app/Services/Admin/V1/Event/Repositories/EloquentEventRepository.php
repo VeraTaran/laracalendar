@@ -12,7 +12,7 @@ class EloquentEventRepository implements EventRepositoryInterface
         $event = $event->create($data);
         return $event;
     }
-    public function updateFromArray(Event $event, array $data)
+    public function updateFromArray(Event $event, array $data): Event
     {
         $event->update($data);
         return $event;

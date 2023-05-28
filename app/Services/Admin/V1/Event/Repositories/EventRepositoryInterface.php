@@ -8,5 +8,5 @@ interface EventRepositoryInterface
 {
     public function createFromArray(array $data): Event;
 
-    public function updateFromArray(Event $event, array $data);
+    public function updateFromArray(Event $event, array $data): Event;
 }

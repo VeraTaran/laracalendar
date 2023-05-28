@@ -8,7 +8,7 @@ use App\Services\Admin\V1\Event\Repositories\EventRepositoryInterface;
 class CreateEventHandler
 {
 
-    private $eventRepository;
+    private EventRepositoryInterface $eventRepository;
 
     public function __construct(
         EventRepositoryInterface $eventRepository
